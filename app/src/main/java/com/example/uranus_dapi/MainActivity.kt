@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.uranus_dapi.databinding.ActivityMainBinding
 import com.example.uranus_dapi.pertemuan_4.FourthActivity
+import com.example.uranus_dapi.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -37,6 +38,13 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        binding.btnToFiftth.setOnClickListener {
+            val intent = Intent(this@MainActivity, FifthActivity
+            ::class.java)
+
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
@@ -48,4 +56,9 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.e("onDestroy", "MainActivity dihapus dari stack")
     }
-}
+
+    }
+
+
+
+

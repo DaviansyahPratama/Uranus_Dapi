@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,18 +10,15 @@
     android:background="#FFEB3B"
     tools:context=".pertemuan_4.FourthActivity">
 
-    <!-- MaterialCardView dengan ID cardView -->
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="48dp"
+        android:backgroundTint="#00BCD4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardElevation="@dimen/material_emphasis_medium"
-        android:backgroundTint="#00BCD4">
-
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -36,9 +34,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvHasil"
@@ -49,7 +48,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
 
     <Button
         android:id="@+id/btnShowSnackbar"
@@ -59,7 +58,7 @@
         android:text="Tampilkan Snackbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHasil" />
+        app:layout_constraintTop_toBottomOf="@id/tvHasil" />
 
     <Button
         android:id="@+id/btnShowAlertDialog"
@@ -68,9 +67,8 @@
         android:layout_marginTop="16dp"
         android:text="Tampilkan Alert Dialog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowSnackbar" />
+        app:layout_constraintTop_toBottomOf="@id/btnShowSnackbar" />
 
     <Button
         android:id="@+id/btnKembali"
@@ -80,6 +78,7 @@
         android:text="Kembali"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowAlertDialog" />
+        app:layout_constraintTop_toBottomOf="@id/btnShowAlertDialog" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

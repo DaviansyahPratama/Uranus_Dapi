@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,15 +6,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
+    android:background="#004D98"
+    android:padding="16dp"
     tools:context=".pertemuan_4.FourthActivity">
 
+    <!-- CardView bertema Merah Garnet Barcelona -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="#00BCD4"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="#A50044"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,13 +26,17 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp">
+            android:padding="12dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tombol 1"
+                android:textColor="#004D98"
+                android:textStyle="bold"
+                app:backgroundTint="#EDBB00"
+                app:cornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,46 +46,66 @@
 
     </androidx.cardview.widget.CardView>
 
+    <!-- Teks Hasil / Header -->
     <TextView
         android:id="@+id/tvHasil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:text="Halaman Fourth Activity"
-        android:textSize="18sp"
+        android:textColor="#EDBB00"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView" />
 
-    <Button
+    <!-- Tombol Snackbar -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnShowSnackbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
         android:text="Tampilkan Snackbar"
+        android:textColor="#004D98"
+        android:textStyle="bold"
+        app:backgroundTint="#EDBB00"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHasil" />
+        app:layout_constraintTop_toBottomOf="@id/tvHasil"
+        app:layout_constraintWidth_percent="0.8" />
 
-    <Button
+    <!-- Tombol Alert Dialog -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnShowAlertDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:text="Tampilkan Alert Dialog"
+        android:textColor="#004D98"
+        android:textStyle="bold"
+        app:backgroundTint="#EDBB00"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnShowSnackbar" />
+        app:layout_constraintTop_toBottomOf="@id/btnShowSnackbar"
+        app:layout_constraintWidth_percent="0.8" />
 
-    <Button
+    <!-- Tombol Kembali -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnKembali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:text="Kembali"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#A50044"
+        app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnShowAlertDialog" />
-
+        app:layout_constraintTop_toBottomOf="@id/btnShowAlertDialog"
+        app:layout_constraintWidth_percent="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

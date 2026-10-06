@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004D98"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="28dp"
+    tools:context=".AuthActivity">
+
+    <!-- Logo Barcelona -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Logo Barcelona"
+        android:src="@drawable/barcelona" />
+
+    <!-- Title / Brand Header -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FC BARCELONA"
+        android:textColor="#EDBB00"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Més que un club"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="italic" />
+
+    <!-- Input Username -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Username"
+        android:textColorHint="#B0BEC5"
+        app:boxBackgroundColor="#10000000"
+        app:boxStrokeColor="#EDBB00"
+        app:hintTextColor="#EDBB00">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Input Password -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:hint="Password"
+        android:textColorHint="#B0BEC5"
+        app:boxBackgroundColor="#10000000"
+        app:boxStrokeColor="#EDBB00"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#EDBB00"
+        app:hintTextColor="#EDBB00">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Tombol Login -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="VISCA EL BARÇA"
+        android:textColor="#004D98"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#EDBB00"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>

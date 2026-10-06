@@ -6,29 +6,89 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
+    android:background="#004D98"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnToFourth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ke Fourth Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- Header / Logo Kecil -->
+    <ImageView
+        android:id="@+id/imgLogoHeader"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="Logo Barcelona"
+        android:src="@drawable/barcelona"
+        app:layout_constraintBottom_toTopOf="@id/tvTitleMain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnToFiftth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ke Fifth Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvTitleMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="MAIN MENU"
+        android:textColor="#EDBB00"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btnToFourth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoHeader" />
+
+    <!-- Tombol Ke Fourth Activity -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToFourth"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:text="Ke Fourth Activity"
+        android:textColor="#004D98"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="#EDBB00"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnToFiftth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleMain"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <!-- Tombol Ke Fifth Activity -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToFiftth"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:text="Ke Fifth Activity"
+        android:textColor="#004D98"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="#EDBB00"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnToFourth"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <!-- Tombol Logout -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:text="LOGOUT"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="#A50044"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnToFiftth"
+        app:layout_constraintWidth_percent="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

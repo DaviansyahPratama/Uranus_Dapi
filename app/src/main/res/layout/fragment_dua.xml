@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#75AADB"
+    android:padding="24dp"
+    tools:context=".Home.Pertemuan_6.DuaFragment">
+
+    <!-- Nomor Punggung Ikonik Messi -->
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textColor="#FFFFFF"
+        android:textSize="72sp"
+        android:textStyle="bold" />
+
+    <!-- Nama Player -->
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIONEL MESSI"
+        android:textColor="#201E50"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- Gelar G.O.A.T -->
+    <TextView
+        android:id="@+id/tvMotto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="The Greatest Of All Time (G.O.A.T)"
+        android:textColor="#FCBF49"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <!-- Kutipan / Status Ikonik -->
+    <TextView
+        android:id="@+id/tvQuote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="¡Qué mirás, bobo? Andá pa' allá"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -9,9 +9,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.uranus_dapi.Home.Pertemuan_6.SixthActivity
 import com.example.uranus_dapi.databinding.ActivityMainBinding
-import com.example.uranus_dapi.pertemuan_4.FourthActivity
-import com.example.uranus_dapi.pertemuan_5.FifthActivity
+import com.example.uranus_dapi.Home.pertemuan_4.FourthActivity
+import com.example.uranus_dapi.Home.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -45,6 +46,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnToFiftth.setOnClickListener {
             val intent = Intent(this@MainActivity, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Klik tombol btnToSixth untuk berpindah ke SixthActivity
+        binding.btnToSixth.setOnClickListener {
+            val intent = Intent(this@MainActivity, SixthActivity::class.java)
             startActivity(intent)
         }
 

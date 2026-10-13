@@ -67,10 +67,28 @@
         android:textStyle="bold"
         app:backgroundTint="#EDBB00"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        app:layout_constraintBottom_toTopOf="@id/btnToSixth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnToFourth"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <!-- Tombol Ke Sixth Activity -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToSixth"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:text="Ke Sixth Activity"
+        android:textColor="#004D98"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="#EDBB00"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnToFiftth"
         app:layout_constraintWidth_percent="0.85" />
 
     <!-- Tombol Logout -->
@@ -88,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnToFiftth"
+        app:layout_constraintTop_toBottomOf="@id/btnToSixth"
         app:layout_constraintWidth_percent="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

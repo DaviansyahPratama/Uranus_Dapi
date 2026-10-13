@@ -1,42 +1,28 @@
-package com.example.uranus_dapi.pertemuan_5
+package com.example.uranus_dapi.Home.pertemuan_5
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.uranus_dapi.BaseActivity
 import com.example.uranus_dapi.R
 import com.example.uranus_dapi.databinding.ActivityFifthBinding
 
-class FifthActivity : AppCompatActivity() {
+// 1. Ubah warisan dari AppCompatActivity menjadi BaseActivity
+class FifthActivity : BaseActivity() {
 
-    private lateinit var binding: ActivityFifthBinding
+    private lateinit var fifthBinding: ActivityFifthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
 
-        binding = ActivityFifthBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        // 2. Inflate layout activity_fifth ke dalam fragment_container milik BaseActivity
+        fifthBinding = ActivityFifthBinding.inflate(layoutInflater)
+        binding.fragmentContainer.addView(fifthBinding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-
-            insets
-        }
-
-        setSupportActionBar(binding.toolbar)
+        // 3. Setup Toolbar/ActionBar
+        setSupportActionBar(fifthBinding.toolbar)
 
         supportActionBar?.apply {
             title = "Activity Fifth"
@@ -46,8 +32,8 @@ class FifthActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24)
         }
 
-        // Tombol untuk membuka WebViewActivity
-        binding.btnWebView.setOnClickListener {
+        // 4. Tombol untuk membuka WebViewActivity
+        fifthBinding.btnWebView.setOnClickListener {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }

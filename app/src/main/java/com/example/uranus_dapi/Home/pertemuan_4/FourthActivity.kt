@@ -1,41 +1,35 @@
-package com.example.uranus_dapi.pertemuan_4
+package com.example.uranus_dapi.Home.pertemuan_4
 
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.uranus_dapi.R
+import com.example.uranus_dapi.BaseActivity
 import com.example.uranus_dapi.databinding.ActivityFourthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
-class FourthActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityFourthBinding
+// 1. Ubah warisan dari AppCompatActivity menjadi BaseActivity
+class FourthActivity : BaseActivity() {
+
+    private lateinit var fourthBinding: ActivityFourthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityFourthBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
+        // 2. Inflate layout activity_fourth ke dalam fragment_container milik BaseActivity
+        fourthBinding = ActivityFourthBinding.inflate(layoutInflater)
+        binding.fragmentContainer.addView(fourthBinding.root)
 
         Log.e("onCreate", "FourthActivity dibuat pertama kali")
 
+        // 3. Ambil data intent dari HomeFragment
         val name = intent.getStringExtra("name")
         val from = intent.getStringExtra("from")
         val age = intent.getIntExtra("age", 0)
         Log.e("Data Intent", "Nama: $name , Usia: $age, Asal: $from")
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
         // Tombol untuk menampilkan Snackbar
-        binding.btnShowSnackbar.setOnClickListener {
-            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+        fourthBinding.btnShowSnackbar.setOnClickListener {
+            Snackbar.make(fourthBinding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
                 .setAction("Tutup") {
                     Log.e("Info Snackbar", "Snackbar ditutup")
                 }
@@ -43,7 +37,7 @@ class FourthActivity : AppCompatActivity() {
         }
 
         // Tombol untuk menampilkan MaterialAlertDialog
-        binding.btnShowAlertDialog.setOnClickListener {
+        fourthBinding.btnShowAlertDialog.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Konfirmasi")
                 .setMessage("Apakah Anda yakin ingin melanjutkan?")
@@ -59,7 +53,7 @@ class FourthActivity : AppCompatActivity() {
         }
 
         // Tombol kembali untuk menutup FourthActivity
-        binding.btnKembali.setOnClickListener {
+        fourthBinding.btnKembali.setOnClickListener {
             finish()
         }
     }

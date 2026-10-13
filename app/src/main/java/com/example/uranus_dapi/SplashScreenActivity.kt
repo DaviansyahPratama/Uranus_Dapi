@@ -32,7 +32,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
             // 2. Arahkan Intent berdasarkan status isLogin
             val intent = if (isLogin) {
-                Intent(this@SplashScreenActivity, MainActivity::class.java)
+                Intent(this@SplashScreenActivity, BaseActivity::class.java)
             } else {
                 Intent(this@SplashScreenActivity, AuthActivity::class.java)
             }

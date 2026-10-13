@@ -25,7 +25,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FC BARCELONA"
+        android:text="Barcelona"
         android:textColor="#EDBB00"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Més que un club"
+        android:text="Mes Que Un Club"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:textStyle="italic" />
@@ -85,7 +85,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="VISCA EL BARÇA"
+        android:text="Visca Barca"
         android:textColor="#004D98"
         android:textSize="16sp"
         android:textStyle="bold"

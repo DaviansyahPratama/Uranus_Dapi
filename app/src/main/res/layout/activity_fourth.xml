@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#004D98"
     android:padding="16dp"
-    tools:context=".pertemuan_4.FourthActivity">
+    tools:context=".Home.pertemuan_4.FourthActivity">
 
     <!-- CardView bertema Merah Garnet Barcelona -->
     <androidx.cardview.widget.CardView

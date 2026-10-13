@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#004D98"
-    tools:context=".pertemuan_5.FifthActivity">
+    tools:context=".Home.pertemuan_5.FifthActivity">
 
     <!-- TOOLBAR (Merah Garnet Barcelona) -->
     <com.google.android.material.appbar.AppBarLayout

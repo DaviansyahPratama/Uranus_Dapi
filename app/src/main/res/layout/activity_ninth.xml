@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home.pertemuan_9.NinthActivity">
+
+    <!-- Header Wave Background -->
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- 1. TextInputLayout & MaterialButton -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="20dp"
+                android:hint="Email"
+                app:startIconDrawable="@android:drawable/ic_dialog_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="10dp"
+                android:text="Login" />
+
+            <!-- EditText dengan Custom Background Drawable -->
+            <EditText
+                android:id="@+id/etCustomBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="EditText dengan Custom Background"
+                android:textSize="14sp" />
+
+            <!-- 2. Chip & ChipGroup -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTerbaru"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Terbaru" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPenting"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Penting" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBelumDibaca"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Belum Dibaca" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- 4. GridLayout -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayoutMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                app:columnCount="3"
+                app:useDefaultMargins="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Menu 1"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Menu 2"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Menu 3"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Menu 4"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Menu 5"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:text="Menu 6"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal" />
+            </androidx.gridlayout.widget.GridLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

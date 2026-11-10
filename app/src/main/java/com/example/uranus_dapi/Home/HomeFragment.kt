@@ -1,4 +1,4 @@
-package com.example.uranus_dapi
+package com.example.uranus_dapi.Home
 
 import android.content.Context
 import android.content.Intent
@@ -9,9 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.example.uranus_dapi.AuthActivity
 import com.example.uranus_dapi.Home.Pertemuan_6.SixthActivity
+import com.example.uranus_dapi.Home.pertemuan_10.TenthActivity
 import com.example.uranus_dapi.Home.pertemuan_4.FourthActivity
 import com.example.uranus_dapi.Home.pertemuan_5.FifthActivity
+import com.example.uranus_dapi.Home.pertemuan_9.NinthActivity
 import com.example.uranus_dapi.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -49,6 +52,18 @@ class HomeFragment : Fragment() {
 
         binding.btnToSixth.setOnClickListener {
             val intent = Intent(requireContext(), SixthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke Pertemuan 9
+        binding.btnPertemuan9.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke Pertemuan 10
+        binding.btnPertemuan10.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 

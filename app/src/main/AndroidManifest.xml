@@ -12,8 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Uranus_Dapi">
+        android:theme="@style/Theme.Uranus_Dapi"
+        android:usesCleartextTraffic="true">
 
         <!-- 1. SplashScreenActivity dijadikan LAUNCHER (Exported: true) -->
         <activity
@@ -52,8 +52,6 @@
             android:name=".Home.pertemuan_5.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
-        <!-- Diperbaiki: SixthActivity menggunakan S Kapital -->
         <activity
             android:name=".Home.Pertemuan_6.SixthActivity"
             android:exported="false"
@@ -62,10 +60,19 @@
             android:name=".BaseActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
-        <!-- DISESTAUIKAN: pertemuan_9 (p kecil) & NinthActivity (tanpa i ganda) -->
         <activity
             android:name=".Home.pertemuan_9.NinthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- DISESUAIKAN: menggunakan package .Message.tutorial.TutorialMessageActivity -->
+        <activity
+            android:name=".Message.tutorial.TutorialMessageActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

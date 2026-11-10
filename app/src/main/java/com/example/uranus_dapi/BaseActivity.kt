@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.uranus_dapi.Home.HomeFragment
+import com.example.uranus_dapi.Message.MessageFragment // <-- Import MessageFragment
+import com.example.uranus_dapi.MoreFragment       // <-- Import MoreFragment (jika ada di package More)
 import com.example.uranus_dapi.databinding.ActivityBaseBinding
 
 open class BaseActivity : AppCompatActivity() {
@@ -40,34 +43,25 @@ open class BaseActivity : AppCompatActivity() {
 
     private fun setupBottomNavigation() {
         binding.bottomNavView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home -> {
-                    if (!isBaseActivity()) {
-                        // Jika klik dari SecondActivity/FourthActivity/dll, tutup activity tersebut untuk kembali ke BaseActivity
-                        finish()
-                    } else {
-                        // Jika sudah di BaseActivity, tampilkan HomeFragment
+            if (!isBaseActivity()) {
+                finish()
+                true
+            } else {
+                when (item.itemId) {
+                    R.id.home -> {
                         replaceFragment(HomeFragment())
+                        true
                     }
-                    true
-                }
-                R.id.message -> {
-                    if (!isBaseActivity()) {
-                        // Tutup sub-activity lalu berpindah ke tab Message
-                        finish()
+                    R.id.message -> {
+                        replaceFragment(MessageFragment())
+                        true
                     }
-                    replaceFragment(MessageFragment())
-                    true
-                }
-                R.id.more -> {
-                    if (!isBaseActivity()) {
-                        // Tutup sub-activity lalu berpindah ke tab More
-                        finish()
+                    R.id.more -> {
+                        replaceFragment(MoreFragment())
+                        true
                     }
-                    replaceFragment(MoreFragment())
-                    true
+                    else -> false
                 }
-                else -> false
             }
         }
     }
@@ -81,7 +75,7 @@ open class BaseActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         if (!isBaseActivity()) {
-            // Saat di sub-activity (pertemuan 2, 3, 4, 5, 6), tetap sorot ikon Home
+            // Saat di sub-activity, tetap sorot ikon Home
             binding.bottomNavView.menu.findItem(R.id.home)?.isChecked = true
         }
     }

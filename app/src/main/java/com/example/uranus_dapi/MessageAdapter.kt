@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.bumptech.glide.Glide
+import com.example.uranus_dapi.Message.MessageModel // <-- Tambahkan Import ini
 import com.example.uranus_dapi.databinding.ItemMessageBinding
 import com.google.android.material.snackbar.Snackbar
 

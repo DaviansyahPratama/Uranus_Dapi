@@ -4,51 +4,56 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import android.widget.BaseAdapter
 import com.bumptech.glide.Glide
-import com.example.uranus_dapi.Message.MessageModel // <-- Tambahkan Import ini
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.uranus_dapi.Message.MessageModel
 import com.example.uranus_dapi.databinding.ItemMessageBinding
-import com.google.android.material.snackbar.Snackbar
 
 class MessageAdapter(
-    context: Context,
-    private val messages: List<MessageModel>
-) : ArrayAdapter<MessageModel>(context, 0, messages) {
+    private val context: Context,
+    private val messageList: List<MessageModel>
+) : BaseAdapter() {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val binding: ItemMessageBinding = if (convertView == null) {
-            ItemMessageBinding.inflate(LayoutInflater.from(context), parent, false)
+    override fun getCount(): Int = messageList.size
+
+    override fun getItem(position: Int): Any = messageList[position]
+
+    override fun getItemId(position: Int): Long = position.toLong()
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val binding: ItemMessageBinding
+        val view: View
+
+        if (convertView == null) {
+            binding = ItemMessageBinding.inflate(LayoutInflater.from(context), parent, false)
+            view = binding.root
+            view.tag = binding
         } else {
-            ItemMessageBinding.bind(convertView)
+            view = convertView
+            binding = view.tag as ItemMessageBinding
         }
 
-        val data = messages[position]
+        val item = messageList[position]
 
-        // Load Gambar Profil dengan Glide
+        // Set Teks
+        binding.tvSenderName.text = item.senderName
+        binding.tvMessageText.text = item.messageText
+        binding.tvAge.text = "${item.age} thn"
+
+        // Generasi URL Fallback Inisial Nama (Tema Blaugrana: Background Emas #EDBB00, Teks Merah #A50044)
+        val fallbackUrl = "https://ui-avatars.com/api/?name=${item.senderName.replace(" ", "+")}&background=EDBB00&color=A50044&size=150"
+
+        // Load Gambar via Glide
         Glide.with(context)
-            .load(data.avatarUrl)
+            .load(item.avatarUrl)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(android.R.drawable.ic_menu_gallery)
-            .error(android.R.drawable.ic_delete)
-            .into(binding.avatarImg)
+            .error(
+                Glide.with(context).load(fallbackUrl) // Otomatis buat avatar inisial jika URL utama gagal/terblokir
+            )
+            .into(binding.imgAvatar)
 
-        // Set Nama Pengirim
-        binding.textSender.text = data.senderName
-
-        // WAJIB: Update textAge secara dinamis dari data.age!
-        binding.textAge.text = "${data.age} thn"
-
-        // Set Isi Pesan
-        binding.textMessage.text = data.messageText
-
-        // Event Klik Item menampilkan Snackbar
-        binding.root.setOnClickListener {
-            Snackbar.make(
-                parent,
-                "Pesan dari ${data.senderName} (${data.age} tahun): ${data.messageText}",
-                Snackbar.LENGTH_SHORT
-            ).show()
-        }
-
-        return binding.root
+        return view
     }
 }

@@ -32,21 +32,82 @@ class MessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Setup Toolbar dari Layout XML
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Message"
         }
         setHasOptionsMenu(true)
 
-        // 2. Data dummy untuk ListView
+        // URL Foto Wajah Manusia dari CDN Unsplash Public (Bebas Hotlink & Bebas Blokir)
         val dummyData = listOf(
-            MessageModel("Pedri", "Hola Visca Barca!", "https://via.placeholder.com/150", 21),
-            MessageModel("Gavi", "Ready for next match", "https://via.placeholder.com/150", 19),
-            MessageModel("Lamine Yamal", "Força Barça!", "https://via.placeholder.com/150", 16)
+            MessageModel(
+                "Marc-André ter Stegen",
+                "Clean sheet is our priority tonight! 🧤",
+                "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop",
+                32
+            ),
+            MessageModel(
+                "Jules Koundé",
+                "Defensive line is solid and ready.",
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop",
+                25
+            ),
+            MessageModel(
+                "Pau Cubarsí",
+                "Building play from the back smoothly.",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop",
+                17
+            ),
+            MessageModel(
+                "Inigo Martínez",
+                "Headers and tackles are locked in.",
+                "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop",
+                33
+            ),
+            MessageModel(
+                "Alejandro Balde",
+                "Pace on the left flank is unmatched! ⚡",
+                "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop",
+                20
+            ),
+            MessageModel(
+                "Marc Casadó",
+                "Controlling the midfield tempo.",
+                "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop",
+                20
+            ),
+            MessageModel(
+                "Pedri",
+                "Hola! Ready for some Magic Tiki-Taka pass? 🪄",
+                "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop",
+                21
+            ),
+            MessageModel(
+                "Dani Olmo",
+                "Great space between the lines today!",
+                "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop",
+                26
+            ),
+            MessageModel(
+                "Lamine Yamal",
+                "Força Barça! Cutting inside to score! 💎",
+                "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop",
+                17
+            ),
+            MessageModel(
+                "Raphinha",
+                "High pressing and relentless work rate! 🔥",
+                "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&auto=format&fit=crop",
+                27
+            ),
+            MessageModel(
+                "Robert Lewandowski",
+                "Targeting another hat-trick tonight! ⚽",
+                "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=200&auto=format&fit=crop",
+                36
+            )
         )
 
-        // 3. Pasang Adapter ke ListView (listMessageItems)
         val adapter = MessageAdapter(requireContext(), dummyData)
         binding.listMessageItems.adapter = adapter
     }

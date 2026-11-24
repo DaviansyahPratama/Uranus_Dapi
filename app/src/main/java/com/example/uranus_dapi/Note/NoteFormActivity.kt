@@ -26,10 +26,10 @@ class NoteFormActivity : AppCompatActivity() {
         db = AppDatabase.getInstance(this)
 
         binding.btnSaveNote.setOnClickListener {
-            val title = binding.etTitle.text.toString()
-            val content = binding.etContent.text.toString()
+            val title = binding.etTitle.text.toString().trim()
+            val content = binding.etContent.text.toString().trim()
 
-            if (title.isNotBlank() && content.isNotBlank()) {
+            if (title.isNotEmpty() && content.isNotEmpty()) {
                 /** Penggunaan Coroutine dalam melakukan insert data **/
                 lifecycleScope.launch {
                     val note = NoteEntity(
@@ -38,6 +38,7 @@ class NoteFormActivity : AppCompatActivity() {
                         createdAt = System.currentTimeMillis()
                     )
                     db.noteDao().insert(note)
+                    Toast.makeText(this@NoteFormActivity, "Catatan berhasil disimpan!", Toast.LENGTH_SHORT).show()
                     finish()
                 }
             } else {

@@ -5,22 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A50044"
+    android:background="#002B5C"
     tools:context=".Home.Pertemuan_6.SatuFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#A50044"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#A50044"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@android:color/white" />
+            app:titleTextColor="#EDBB00" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -33,9 +34,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:background="#A50044"
             android:gravity="center"
-            android:padding="16dp">
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="20dp">
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -58,10 +62,20 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#EDBB00" />
+
         <ListView
             android:id="@+id/listViewItems"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="#002B5C"
+            android:divider="#004D98"
+            android:dividerHeight="1dp"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="8dp" />
 
     </LinearLayout>
 
